@@ -1,0 +1,109 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container Styling */
+.continer {
+    background: url(snake.jpg);
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+
+/* Score and Hi-Score Boxes */
+#scoreBox, #hiScoreBox {
+    position: absolute;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#scoreBox {
+    top: 20px;
+    right: 220px;
+}
+
+#hiScoreBox {
+    top: 80px;
+    right: 220px;
+}
+
+/* Game Board */
+#board {
+   
+    background: linear-gradient(rgb(170,236,170),rgb(236,236,167));
+    width: 90vmin;
+    height: 90vmin;
+    border: 3px solid #004d40;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Snake Head */
+.head {
+    background: linear-gradient(45deg, #ffeb3b, #f44336);
+    border: 2px solid #4caf50;
+    border-radius: 50%;
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Snake Body */
+.body {
+    background-color: #8e44ad;
+    border: 0.25vmin solid #e1bee7;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* Food */
+.food {
+    background: radial-gradient(circle, #e91e63, #8e44ad);
+    border: 0.25vmin solid #000;
+    border-radius: 50%;
+    animation: food-pulse 0.6s infinite alternate;
+}
+
+/* Food Animation */
+@keyframes food-pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Animations */
+.head:hover {
+    transform: scale(1.1);
+}
+
+#scoreBox, #hiScoreBox {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
